@@ -79,7 +79,8 @@ call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_TEMP%" -t "%DEPLOYMENT_
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 4. Detect 500
-call curl -IsL %WEBSITE_HOSTNAME%
+echo Making a request to %WEBSITE_HOSTNAME% to test deployment.
+call curl -IsL %WEBSITE_HOSTNAME% > nul
 IF !ERRORLEVEL! NEQ 0 goto publisherror
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
