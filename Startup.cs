@@ -14,6 +14,7 @@ namespace kudutest
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            throw new Exception("Error from startup.");
         }
 
         public IConfiguration Configuration { get; }
