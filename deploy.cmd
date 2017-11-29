@@ -80,7 +80,7 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 4. Detect 500
 echo Making a request to %WEBSITE_HOSTNAME% to test deployment.
-call curl -IsL %WEBSITE_HOSTNAME% > nul
+call curl -IsLf %WEBSITE_HOSTNAME% > nul
 IF !ERRORLEVEL! NEQ 0 goto publisherror
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
